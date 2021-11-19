@@ -1,4 +1,5 @@
 //import { useHistory} from 'react-router-dom';
+import * as authServise from '../services/authServise';
 
 const Login = ({history}) => {
 
@@ -7,9 +8,14 @@ const Login = ({history}) => {
   const onFormSubmit = (e) => {
     e.preventDefault();
 
+    let formData = new FormData(e.currentTarget)
+    let email = formData.get(email);
+    let password = formData.get(password);
 
+    console.log(email, password);
+    history.push('/games');
 
-    history.push('/games')
+    //authServise.login(email)
   };
 
     return (

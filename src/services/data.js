@@ -14,7 +14,7 @@ export async function getAll(){
  }
  
  export async function create(data){
-    return await service.post(host + '/data/games',data);
+    return await service.post(host + '/jsonstore/games',data);
 }
 
 export async function editGame(id, data){
@@ -28,6 +28,6 @@ export async function deleteGame(id){
     return await service.del(host + '/games' + id);
 }
 
-export async function searchCars(query){
-    return await service.get(host + `/37CCEB5C-F7E5-BFB6-FFAA-12879CF3A000/775F0275-7F15-48D6-87F9-41CFA9076E16/data/test_menu?props=price,${query}`)//url take not from test
-}
+// export async function searchCars(query){
+//     return await service.get(host + `/37CCEB5C-F7E5-BFB6-FFAA-12879CF3A000/775F0275-7F15-48D6-87F9-41CFA9076E16/data/test_menu?props=price,${query}`)//url take not from test
+// }

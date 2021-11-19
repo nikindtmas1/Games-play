@@ -44,7 +44,7 @@ const CreateGame
 
     return (
         <section id="create-page" class="auth">
-          <form id="create" onSubmit={handleSubmit}>
+          <form id="create" onSubmit={handleSubmit} method="POST">
             <div class="container">
 
               <h1>Create Game</h1>
