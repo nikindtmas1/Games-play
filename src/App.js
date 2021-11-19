@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 //import AsyncStorage from '@react-native-async-storage/async-storage';
 //import Parse from 'parse/react-native';
 
+//import firebase from './firebase';
 
 
 
@@ -21,6 +22,12 @@ import Details from './components/Details';
 window.api = api;
 //Parse.setAsyncStorage(AsyncStorage);
 function App() {
+
+  // const ref = firebase.firestore().collection("games");
+  // console.log(ref);
+  // if(loading){
+  //   return <h1>Loading...</h1>
+  // }
     // Parse.serverURL = 'https://parseapi.back4app.com';
     // Parse.initialize(
     //   'L3A2gZGIu7UpTKTKwO3yTGs4QS0j6JGEeR4qKv5U', // Application ID

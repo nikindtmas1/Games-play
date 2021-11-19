@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 
+
 import GamesItem from './GamesItem';
 //import * as gameService from '../services/gameService';
 import {getAll} from '../services/data';
@@ -11,7 +12,7 @@ const Catalog = ({
   const [games, setGames] = useState([]);
 
   useEffect(() => {
-
+    setLoading(true)
     setTimeout(() => {
       getAll()
       .then(results => {setGames(results)})
