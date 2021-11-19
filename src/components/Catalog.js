@@ -12,7 +12,7 @@ const Catalog = ({
   const [games, setGames] = useState([]);
 
   useEffect(() => {
-    setLoading(true)
+  
     setTimeout(() => {
       getAll()
       .then(results => {setGames(results)})
