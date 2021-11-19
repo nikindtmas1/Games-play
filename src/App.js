@@ -75,11 +75,12 @@ function App() {
         <Switch>
 
           <Route path="/" exact component={WelcomeWorld} />
+          <Route path="/home" component={WelcomeWorld} />
           <Route path="/games" component={Catalog} />
           <Route path="/create-game" component={CreateGame} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
-          <Route path="/details/:id" component={Details} />
+          <Route path="/data/games/:id" component={Details} />
         </Switch>
        
 
