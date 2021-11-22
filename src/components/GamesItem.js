@@ -5,7 +5,7 @@ const GamesItem = ({
     }) => {
 
    
-
+        console.log(game);
     return (
         <div class="allGames">
             <div class="allGames-info">

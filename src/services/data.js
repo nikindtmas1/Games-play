@@ -5,7 +5,9 @@ const host = 'http://localhost:3030';
 service.settings.host = host;
 
 export async function getAll(){
-    return await service.get(host + `/jsonstore/games`);
+    let games = await service.get(host + `/jsonstore/games`);
+    let result = Object.values(games)
+    return result
  }
  
  export async function getOne(id){
