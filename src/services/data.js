@@ -5,11 +5,11 @@ const host = 'http://localhost:3030';
 service.settings.host = host;
 
 export async function getAll(){
-    return await service.get(host + `/data/games`);
+    return await service.get(host + `/jsonstore/games`);
  }
  
  export async function getOne(id){
-     return await service.get(host + `/data/games/${id}`)
+     return await service.get(host + `/jsonstore/games/${id}`)
      //.then(res => res.json())
  }
  

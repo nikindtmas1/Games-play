@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const Header = ({
   isAuthenticated,
-  username
+  user
 }) => {
 
   let guestNavigation = (
@@ -14,6 +14,7 @@ const Header = ({
 
   let userNavigation = (
     <div id="user">
+      <span>Welcome: {user}</span>
     <Link to="/create-game">Create Game</Link>
     <Link to="/logout">Logout</Link>
   </div>
