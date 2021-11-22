@@ -1,7 +1,10 @@
 //import { useHistory} from 'react-router-dom';
 import * as authServise from '../services/authServise';
 
-const Login = ({history}) => {
+const Login = ({
+  history,
+  onLogin
+}) => {
 
 //let historyHook = useHistory();
 
@@ -13,6 +16,7 @@ const Login = ({history}) => {
     let password = formData.get("password");
 
     console.log(email, password);
+    //onLogin(email)
     history.push('/')
     //historyHook.push('/games');
 
@@ -21,7 +25,7 @@ const Login = ({history}) => {
 
     return (
         <section id="login-page" class="auth">
-        <form id="login" onSubmit={onFormSubmit}>
+        <form id="login" onSubmit={onFormSubmit} method="POST">
 
           <div class="container">
             <div class="brand-logo"></div>

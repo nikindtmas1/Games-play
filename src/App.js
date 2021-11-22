@@ -33,6 +33,14 @@ function App() {
        user: user
      })
   }, []);
+
+  const onLogin = (username) => {
+    setUserInfo({
+      isAuthenticated: true,
+      user: username
+    })
+ 
+  };
   // const ref = firebase.firestore().collection("games");
   // console.log(ref);
   // if(loading){
@@ -89,7 +97,7 @@ function App() {
           <Route path="/home" component={WelcomeWorld} />
           <Route path="/games" component={Catalog} />
           <Route path="/create-game" component={CreateGame} />
-          <Route path="/login" component={Login} />
+          <Route path="/login" component={Login} onLogin={onLogin} />
           <Route path="/register" component={Register} />
           <Route path="/data/games/:id" component={Details} />
           <Route path="/logout" render={(props) => {
