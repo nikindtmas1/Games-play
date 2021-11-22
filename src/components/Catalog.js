@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 import GamesItem from './GamesItem';
 //import * as gameService from '../services/gameService';
-import {getAll} from '../services/data';
+import * as services from '../services/data';
 
 const Catalog = ({
 
@@ -14,8 +14,10 @@ const Catalog = ({
   useEffect(() => {
   
     setTimeout(() => {
-      getAll()
-      .then(results => {setGames(results)})
+      services.getAll()
+      .then(results => {
+        setGames(results)
+      })
     }, 1000)
     
 
