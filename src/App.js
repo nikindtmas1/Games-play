@@ -1,12 +1,12 @@
-//import { useState, createElement } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { useState, useEffect, createElement } from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 //import AsyncStorage from '@react-native-async-storage/async-storage';
 //import Parse from 'parse/react-native';
 
 //import firebase from './firebase';
 
-
+import * as authService from './services/authServise';
 
 import * as api from './services/data';
 
@@ -23,6 +23,16 @@ window.api = api;
 //Parse.setAsyncStorage(AsyncStorage);
 function App() {
 
+  const [userInfo, setUserInfo] = useState({isAuthenticated: false, username: ''});
+
+  useEffect(() => {
+     let user = authService.getUser();
+
+     setUserInfo({
+       isAuthenticated: Boolean(user),
+       user: user
+     })
+  }, []);
   // const ref = firebase.firestore().collection("games");
   // console.log(ref);
   // if(loading){
@@ -67,9 +77,10 @@ function App() {
   //  }
 
   return (
+
     <div id="box">
 
-      <Header component={Header} />
+      <Header component={Header} {...userInfo} />
 
       <main id="main-content">
         <Switch>
@@ -81,6 +92,12 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/data/games/:id" component={Details} />
+          <Route path="/logout" render={(props) => {
+            console.log('You are logged out!');
+            //props.history.push('/')
+            return <Redirect to='/' />
+          }} />
+
         </Switch>
        
 
