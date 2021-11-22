@@ -4,15 +4,13 @@ const GamesItem = ({
     game,
     }) => {
 
-   
-        console.log(game);
     return (
         <div class="allGames">
             <div class="allGames-info">
                 <img src={game.imageUrl} />
                 <h6>{game.category}</h6>
                 <h2>{game.title}</h2>
-                <Link to={`/data/games/${game._id}`} class="details-button">Details</Link>
+                <Link to={`/jsonstore/games/${game._id}`} class="details-button">Details</Link>
             </div>
         </div>
 

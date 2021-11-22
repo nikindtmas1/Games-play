@@ -7,11 +7,14 @@ service.settings.host = host;
 export async function getAll(){
     let games = await service.get(host + `/jsonstore/games`);
     let result = Object.values(games)
-    return result
+    return result;
  }
  
  export async function getOne(id){
-     return await service.get(host + `/jsonstore/games/${id}`)
+     let game = await service.get(host + `/jsonstore/games/${id}`);
+     //let result = Object.values(game)
+     //console.log(result);
+     return game;
      //.then(res => res.json())
  }
  
