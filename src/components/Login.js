@@ -3,19 +3,20 @@ import * as authServise from '../services/authServise';
 
 const Login = ({history}) => {
 
-  //let history = useHistory();
+//let historyHook = useHistory();
 
   const onFormSubmit = (e) => {
     e.preventDefault();
 
     let formData = new FormData(e.currentTarget)
-    let email = formData.get(email);
-    let password = formData.get(password);
+    let email = formData.get("email");
+    let password = formData.get("password");
 
     console.log(email, password);
-    history.push('/games');
+    history.push('/')
+    //historyHook.push('/games');
 
-    //authServise.login(email)
+    authServise.login(email)
   };
 
     return (
