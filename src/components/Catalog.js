@@ -15,7 +15,6 @@ const Catalog = ({
 
       services.getAll()
       .then((results) => {
-        console.log(results)
         setGames(results)
       });
       
