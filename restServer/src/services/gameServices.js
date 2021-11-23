@@ -1,17 +1,17 @@
-const Destination = require('../models/gameModel');
+const Game = require('../models/gameModel');
 
 
-const getAll = () => Destination.find();
+const getAll = () => Game.find();
 
-const getOne = (id) => Destination.findById(id);
+const getOne = (id) => Game.findById(id);
 
-const createGame = (data) => Destination.create(data);
+const createGame = (data) => Game.create(data);
 
-const update = (id, destinationData) => Destination.findByIdAndUpdate(id, destinationData);
+const update = (id, gameData) => Game.findByIdAndUpdate(id, gameData);
  
-const getOwn = (userId) => Destination.find({_ownerId: userId});
+const getOwn = (userId) => Game.find({_ownerId: userId});
 
-const deleteGame = (id) => Destination.findByIdAndDelete(id);
+const deleteGame = (id) => Game.findByIdAndDelete(id);
 
 
 module.exports = {

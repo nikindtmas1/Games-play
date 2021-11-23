@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 
-const desctinationSchema = new mongoose.Schema({
+const gameSchema = new mongoose.Schema({
 
-    name: String,
-    description: String,
-    imgOne: String,
-    imgTwo: String,
-    imgThree: String,
+    title: String,
+    category: String,
+    maxLevel: String,
+    imageUrl: String,
+    summary: String,
 });
 
-module.exports = mongoose.model('Destination', desctinationSchema);
+module.exports = mongoose.model('Game', gameSchema);
