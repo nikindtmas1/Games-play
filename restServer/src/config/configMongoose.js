@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const { development } = require('../config/config');
-const connectStr = development.dbUrl;
+const connectStr = development.dbAtlas;
 
 module.exports = (app) => {
 
