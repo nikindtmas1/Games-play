@@ -7,53 +7,55 @@
    match
   }) => {
 
+    console.log(match.params.id);
     const [game, setGame] = useState({});
 
     useEffect(() => {
        services.getOne(match.params.id)
+       .then(result => console.log(result))
         .then(result => setGame(result))
-    }, []);
+    }, [match.params.id]);
 
     return(
         <section id="game-details">
         <h1>Game Details</h1>
-        <div class="info-section">
+        <div className="info-section">
 
-          <div class="game-header">
-            <img class="game-img" src={game.imageUrl} />
+          <div className="game-header">
+            <img className="game-img" src={game.imageUrl} />
             <h1>{game.title}</h1>
-            <span class="levels">MaxLevel: {game.maxLevel}</span>
-            <p class="type">{game.category}</p>
+            <span className="levels">MaxLevel: {game.maxLevel}</span>
+            <p className="type">{game.category}</p>
           </div>
 
-          <p class="text">
+          <p className="text">
             {game.summary}
           </p>
 
-          <div class="details-comments">
+          <div className="details-comments">
             <h2>Comments:</h2>
             <ul>
-              <li class="comment">
+              <li className="comment">
                 <p>Content: I rate this one quite highly.</p>
               </li>
-              <li class="comment">
+              <li className="comment">
                 <p>Content: The best game.</p>
               </li>
             </ul>
-            <p class="no-comment">No comments.</p>
+            <p className="no-comment">No comments.</p>
           </div>
 
-          <div class="buttons">
-            <a href="#" class="button">Edit</a>
-            <a href="#" class="button">Delete</a>
+          <div className="buttons">
+            <a href="#" className="button">Edit</a>
+            <a href="#" className="button">Delete</a>
           </div>
         </div>
 
-        <article class="create-comment">
+        <article className="create-comment">
           <label>Add new comment:</label>
-          <form class="form">
+          <form className="form">
             <textarea name="comment" placeholder="Comment......"></textarea>
-            <input class="btn submit" type="submit" value="Add Comment" />
+            <input className="btn submit" type="submit" value="Add Comment" />
           </form>
         </article>
 
