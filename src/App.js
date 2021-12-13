@@ -99,7 +99,7 @@ function App() {
           <Route path="/create-game" component={CreateGame} />
           <Route path="/login" component={Login} onLogin={onLogin} />
           <Route path="/register" component={Register} />
-          <Route path="/jsonstore/games/:id" component={Details} />
+          <Route path="/game-play/games/:id" component={Details} />
           <Route path="/logout" render={(props) => {
             console.log('You are logged out!');
             //props.history.push('/')
