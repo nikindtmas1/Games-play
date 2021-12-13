@@ -7,12 +7,10 @@
    match
   }) => {
 
-    console.log(match.params.id);
     const [game, setGame] = useState({});
 
     useEffect(() => {
        services.getOne(match.params.id)
-       .then(result => console.log(result))
         .then(result => setGame(result))
     }, [match.params.id]);
 
