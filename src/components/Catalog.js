@@ -5,9 +5,7 @@ import GamesItem from './GamesItem';
 //import * as gameService from '../services/gameService';
 import * as services from '../services/data';
 
-const Catalog = ({
-  
-}) => {
+const Catalog = () => {
   
   const [games, setGames] = useState([]);
 
