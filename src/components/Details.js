@@ -1,4 +1,5 @@
  import { useState, useEffect } from "react";
+ import { Link } from 'react-router-dom';
 
  //import * as gameService from '../services/gameService';
  import * as services  from '../services/data';
@@ -44,8 +45,8 @@
           </div>
 
           <div className="buttons">
-            <a href="/edit" className="button">Edit</a>
-            <a href="/delete" className="button">Delete</a>
+            <Link to={`/edit/${game._id}`} className="button">Edit</Link>
+            <Link to={`/delete/${game._id}`} className="button">Delete</Link>
           </div>
         </div>
 
