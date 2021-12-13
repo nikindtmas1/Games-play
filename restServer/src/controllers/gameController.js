@@ -14,6 +14,12 @@ router.get('/games', async (req, res) => {
   
 });
 
+router.get('/games/:id', async (req, res) => {
+    let game = await gameService.getOne(req.params.id);
+
+    res.json(game)
+});
+
 // router.get('/details/:id', async (req, res) => {
 
    
