@@ -1,17 +1,20 @@
 import * as service from '../services/gameService';
 
 //const host = 'https://parseapi.back4app.com/';
-const host = 'http://localhost:3030';
+//const host = 'http://localhost:3030';
+const host = 'http://localhost:5000';
 service.settings.host = host;
 
 export async function getAll(){
-    let games = await service.get(host + `/jsonstore/games`);
+    let games = await service.get(host + `/game-play/games`);
     let result = Object.values(games)
     return result;
  }
  
+ //let games = await service.get(host + `/jsonstore/games`);
+
  export async function getOne(id){
-     let game = await service.get(host + `/jsonstore/games/${id}`);
+     let game = await service.get(host + `/game-play/games/${id}`);
      //let result = Object.values(game)
      //console.log(result);
      return game;
@@ -19,7 +22,7 @@ export async function getAll(){
  }
  
  export async function create(data){
-    return await service.post(host + '/jsonstore/games',data);
+    return await service.post(host + '/game-play/games',data);
 }
 
 export async function editGame(id, data){
