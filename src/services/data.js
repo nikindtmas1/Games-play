@@ -27,13 +27,13 @@ export async function getAll(){
 
 export async function editGame(id, data){
     
-    const response = await service.put(host + '/games' + id, data);
+    const response = await service.put(host + '/game-play/games' + id, data);
    
     return response
 }
 
 export async function deleteGame(id){
-    return await service.del(host + '/games' + id);
+    return await service.del(host + '/game-play/games' + id);
 }
 
 // export async function searchCars(query){
