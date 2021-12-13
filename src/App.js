@@ -12,6 +12,7 @@ import Register from "./components/Register";
 import CreateGame from "./components/CreateGame";
 import Catalog from "./components/Catalog";
 
+import EditGame from "./components/EditGame";
 import Details from './components/Details';
 
 window.api = api;
@@ -54,6 +55,7 @@ function App() {
           <Route path="/login" component={Login} onLogin={onLogin} />
           <Route path="/register" component={Register} />
           <Route path="/game-play/games/:id" component={Details} />
+          <Route path="/edit/:id" component={EditGame} />
           <Route path="/logout" render={(props) => {
             console.log('You are logged out!');
             //props.history.push('/')
