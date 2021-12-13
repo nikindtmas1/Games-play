@@ -20,6 +20,13 @@ router.get('/games/:id', async (req, res) => {
     res.json(game)
 });
 
+router.put('games/:id', async (req, res) => {
+  
+   await gameService.update(req.params.id, req.body);
+ 
+    res.json({ok: true});
+ });
+
 // router.get('/details/:id', async (req, res) => {
 
    
