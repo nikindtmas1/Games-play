@@ -12,12 +12,13 @@ const EditGame = ({match}) => {
     gameServise.getOne(match.params.id)
     .then(result => setCurrentGame(result))
     
-  },[]);
+  },[match.params.id]);
 
-  const onSubmit = (e) => {
-    e.preventDefauilt()
-
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+    console.log("clicked");
     let formData = new FormData(e.currentTarget)
+    console.log(formData);
     let title = formData.get('title');
     let category = formData.get('category');
     let maxLevel = formData.get('maxLevel');
@@ -28,14 +29,14 @@ const EditGame = ({match}) => {
 
     console.log(data);
     gameServise.editGame(match.params.id, data)
-    .then(history.push(`game-play/games/${match.params.id}`))
+    .then(history.push(`/games`))
 
   }
 
     return (
 
         <section id="edit-page" className="auth">
-          <form id="edit" method="POST" onSubmit={onSubmit}>
+          <form id="edit" action="" method="POST" >
             <div className="container">
 
               <h1>Edit Game</h1>
@@ -53,7 +54,7 @@ const EditGame = ({match}) => {
 
               <label for="summary">Summary:</label>
               <textarea name="summary" id="summary" defaultValue={currentGame.summary}></textarea>
-              <input className="btn submit" type="submit" value="Edit Game" />
+              <input onSubmit={onSubmitHandler} className="btn submit" type="submit" value="Edit Game" />
 
             </div>
           </form>
